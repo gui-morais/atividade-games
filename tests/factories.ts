@@ -8,3 +8,12 @@ export async function createConsole() {
         }
     })
 }
+
+export async function createGame(id: number) {
+    return prisma.game.create({
+        data: {
+            title: faker.name.firstName(),
+            consoleId: id
+        }
+    })
+}
